@@ -7,7 +7,7 @@ router.get("/", programsController.index);
 router.get("/:id", programsController.detail);
 
 router.post("/create", programsController.create);
-router.put("/update", programsController.create);
+router.put("/update", programsController.update);
 router.delete("/delete/:id", programsController.delete);
 
 module.exports = router;
