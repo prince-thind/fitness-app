@@ -1,4 +1,4 @@
-const Exercise = require("../../models/exercise");
+const Exercise = require("../models/exercise");
 
 exports.index = async function (req, res) {
   const exercises = await Exercise.find().lean();
