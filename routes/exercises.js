@@ -5,6 +5,6 @@ const exercisesController = require("../controllers/exercises/exercises");
 
 router.get("/", exercisesController.index);
 router.post("/create", exercisesController.create);
-router.delete("/delete", exercisesController.delete);
+router.delete("/delete/:id", exercisesController.delete);
 
 module.exports = router;

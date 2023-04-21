@@ -1,11 +1,24 @@
+const Exercise = require("../../models/exercise");
+
 exports.index = async function (req, res) {
-  res.json({ data: { exercises: ["TODO"] } });
+  const exercises = await Exercise.find().lean();
+  return res.json({ data: { exercises } });
 };
 
 exports.create = async function (req, res) {
-  res.json({ data: { exercise: "TODO" } });
+  const { exerciseName, exerciseLength } = req.body;
+  const exercise = new Exercise({
+    exerciseName,
+    exerciseLength,
+  });
+  await exercise.save();
+
+  return res.json({ data: { exercise } });
 };
 
 exports.delete = async function (req, res) {
-  res.json({ data: { success: "TODO" } });
+  const { id } = req.params;
+  const exercise = await Exercise.findByIdAndDelete(id);
+
+  return res.json({ data: { exercise } });
 };
