@@ -7,6 +7,7 @@ const logger = require("morgan");
 
 const mongoose = require("mongoose");
 const exercisesRouter = require("./routes/exercises");
+const programsRouter = require("./routes/programs");
 
 //connect to mongodb
 mongoose.set("strictQuery", false);
@@ -26,5 +27,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api/exercises", exercisesRouter);
+app.use("/api/programs", programsRouter);
 
 module.exports = app;
