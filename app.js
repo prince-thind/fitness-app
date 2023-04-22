@@ -24,7 +24,12 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+
+//serve react production build
+app.use(express.static(path.join(__dirname, "./client/dist/")));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+});
 
 app.use("/api/exercises", exercisesRouter);
 app.use("/api/programs", programsRouter);
