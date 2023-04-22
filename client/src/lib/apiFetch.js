@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 const origin = ""; //origin is same for deployment, for development it's proxied in vite config
 
 export default async function apiFetch(path, props = {}) {
@@ -23,6 +25,16 @@ export default async function apiFetch(path, props = {}) {
 
     return result.data;
   } catch (e) {
+    toast.error(e.message, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     console.error(e);
     return { error: { code: e.code, message: e.message } };
   }
