@@ -20,6 +20,12 @@ exports.create = async function (req, res) {
   const programName = req.body.programName;
   const exercises = JSON.parse(req.body.exercises);
 
+  if (programName.trim() == "") {
+    return res.json({
+      error: { code: 400, message: "Program Name must not be empty" },
+    });
+  }
+
   const alreadyPresentProgram = await Program.findOne({ programName });
   if (alreadyPresentProgram) {
     return res.json({

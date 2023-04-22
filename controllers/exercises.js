@@ -9,6 +9,12 @@ exports.index = async function (req, res) {
 exports.create = async function (req, res) {
   const { exerciseName, exerciseLength } = req.body;
 
+  if (exerciseName.trim() == "") {
+    return res.json({
+      error: { code: 400, message: "Exercise Name must not be empty" },
+    });
+  }
+
   const alreadyPresentExercise = await Exercise.findOne({ exerciseName });
   if (alreadyPresentExercise) {
     return res.json({
