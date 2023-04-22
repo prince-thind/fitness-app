@@ -18,6 +18,7 @@ export default function Exercises() {
                 {exercise.exerciseName}
               </div>
               <div>ID: {exercise._id}</div>
+              <div>length: {exercise.exerciseLength}</div>
               <button data-id={exercise._id} onClick={deleteExercise}>
                 Delete?
               </button>
