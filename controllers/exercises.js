@@ -1,4 +1,5 @@
 const Exercise = require("../models/exercise");
+const Program = require("../models/program");
 
 exports.index = async function (req, res) {
   const exercises = await Exercise.find().lean();
@@ -26,6 +27,17 @@ exports.create = async function (req, res) {
 
 exports.delete = async function (req, res) {
   const { id } = req.params;
+
+  const programs = await Program.find({
+    exercises: [id],
+  });
+
+  for (const program of programs) {
+    const newExercises = program.exercises.filter((e) => e.id != id);
+    program.exercises = newExercises;
+    await program.save();
+  }
+
   const exercise = await Exercise.findByIdAndDelete(id);
 
   if (!exercise) {
