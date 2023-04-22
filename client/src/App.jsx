@@ -1,5 +1,5 @@
 import { RouterProvider } from "react-router-dom";
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 
 import Home from "./pages/Home.jsx";
 import Layout from "./pages/Layout.jsx";
@@ -10,7 +10,7 @@ import UpdateProgram from "./pages/UpdateProgram.jsx";
 import Exercises from "./pages/Exercises.jsx";
 import CreateExercise from "./pages/CreateExercise.jsx";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Layout />,
