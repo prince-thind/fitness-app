@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+.header {
+  background-color: hsl(120, 50%, 20%);
+}
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  display: block;
+  padding: 1rem;
+  color: white;
+}
+.nav-links a:hover {
+  background-color: hsl(120, 50%, 30%);
+}
