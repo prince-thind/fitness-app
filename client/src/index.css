@@ -25,3 +25,12 @@ ul {
 .nav-links a:hover {
   background-color: hsl(120, 50%, 30%);
 }
+
+.list {
+  margin-left: 4rem;
+}
+.list li {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: hsl(120, 50%, 90%);
+}
