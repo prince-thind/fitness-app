@@ -10,6 +10,7 @@ body {
 ul {
   list-style-type: none;
 }
+
 .header {
   background-color: hsl(120, 50%, 20%);
 }
@@ -26,6 +27,15 @@ ul {
   background-color: hsl(120, 50%, 30%);
 }
 
+.intro-heading {
+  text-align: center;
+}
+.intro {
+  font-size: 2rem;
+  padding: 2rem;
+  margin: auto;
+  text-align: center;
+}
 .list {
   margin-left: 4rem;
 }
