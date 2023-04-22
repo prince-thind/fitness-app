@@ -8,7 +8,7 @@ exports.index = async function (req, res) {
 exports.detail = async function (req, res) {
   const { id } = req.params;
   try {
-    const program = await Room.findById(id).populate("exercises").lean();
+    const program = await Program.findById(id).populate("exercises").lean();
     return res.json({ data: { program } });
   } catch (e) {
     console.error(e);
