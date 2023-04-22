@@ -10,7 +10,6 @@ export default function CreateProgram() {
   useEffect(() => {
     (async () => {
       const res = await apiFetch("/api/exercises");
-      console.log(res);
       setExercises(res.exercises);
     })();
   }, []);

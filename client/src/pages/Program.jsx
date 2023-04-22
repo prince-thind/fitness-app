@@ -26,6 +26,8 @@ export default function Program() {
         <button data-id={program._id} onClick={deleteProgram}>
           Delete?
         </button>
+        <Link to={`/programs/update/${program._id}`}>Update?</Link>
+
         <div>
           Exercises:
           <ol className="list">
