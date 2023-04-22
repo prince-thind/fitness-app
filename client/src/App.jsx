@@ -8,7 +8,6 @@ import Program from "./pages/Program.jsx";
 import CreateProgram from "./pages/CreateProgram.jsx";
 import UpdateProgram from "./pages/UpdateProgram.jsx";
 import Exercises from "./pages/Exercises.jsx";
-import Exercise from "./pages/Exercise.jsx";
 import CreateExercise from "./pages/CreateExercise.jsx";
 
 const router = createBrowserRouter([
@@ -40,10 +39,7 @@ const router = createBrowserRouter([
         path: "/exercises",
         element: <Exercises />,
       },
-      {
-        path: "/exercises/:id",
-        element: <Exercise />,
-      },
+
       {
         path: "/exercises/create/",
         element: <CreateExercise />,

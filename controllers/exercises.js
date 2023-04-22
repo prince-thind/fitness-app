@@ -8,7 +8,7 @@ exports.index = async function (req, res) {
 exports.create = async function (req, res) {
   const { exerciseName, exerciseLength } = req.body;
 
-  const alreadyPresentExercise = await exercise.findOne({ exerciseName });
+  const alreadyPresentExercise = await Exercise.findOne({ exerciseName });
   if (alreadyPresentExercise) {
     return res.json({
       error: { code: 403, message: "Exercise Name already exists" },
